@@ -1,0 +1,36 @@
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.exe.config
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.exe
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.pdb
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.dll
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.xml
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.csprojResolveAssemblyReference.cache
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Properties.Resources.resources
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.csproj.GenerateResource.Cache
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.exe
+c:\users\do quang hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.pdb
+C:\Users\Do Quang Hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Form1.resources
+C:\Users\Do Quang Hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Form2.resources
+C:\Users\Do Quang Hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Form3.resources
+C:\Users\Do Quang Hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Form4.resources
+C:\Users\Do Quang Hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Form5.resources
+C:\Users\Do Quang Hung\documents\visual studio 2017\Projects\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Form6.resources
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.exe.config
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.exe
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.pdb
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.dll
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.SqlServer.dll
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.xml
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.SqlServer.xml
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.csprojResolveAssemblyReference.cache
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Properties.Resources.resources
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.csproj.GenerateResource.Cache
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.exe
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.pdb
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormView.resources
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormImport.resources
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormExport.resources
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormMain.resources
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormLogin.resources
+D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormCustomer.resources
