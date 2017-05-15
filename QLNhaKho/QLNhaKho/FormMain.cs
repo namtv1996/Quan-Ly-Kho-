@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLNhaKho.Model;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -13,6 +14,15 @@ namespace QLNhaKho
             Load += Form4_Load;
             treeView1.NodeMouseClick += TreeView1_NodeMouseClick;
             FormClosed += FormMain_FormClosed;
+
+            //tối ưu hóa load form
+            ExM.formCustomer = new FormCustomer();
+            ExM.formExport = new FormExport();
+            ExM.formHelp = new FormHelp();
+            ExM.formImport = new FormImport();
+            ExM.formLogin = new FormLogin();
+           // ExM.formMain = new FormMain();
+            ExM.formView = new FormView();
         }
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -24,25 +34,27 @@ namespace QLNhaKho
         {
             if (e.Node.Name == "Xem")
             {
+                this.Hide();
                 FormView form1 = new FormView();
                 form1.Show();
+            
+                //ExM.formView.Show();
             }
             else if (e.Node.Name == "Nhap")
             {
+                this.Hide();
                 FormImport form2 = new FormImport();
                 form2.Show();
+
 
             }
             else if (e.Node.Name == "Xuat")
             {
+                this.Hide();
                 FormExport form3 = new FormExport();
                 form3.Show();
             }
-            else if (e.Node.Name == "Help")
-            {
-                // helping here
 
-            }
             else if (e.Node.Name == "ThongTinNguoiDung")
             {
                 // user info here
@@ -50,6 +62,13 @@ namespace QLNhaKho
             else if (e.Node.Name == "ThemNguoiDung")
             {
                 // adding new user here
+            }
+            else if (e.Node.Name == "Help")
+            {
+                this.Hide();
+                ExM.formHelp.Show();
+               // form.Show();
+
             }
         }
 

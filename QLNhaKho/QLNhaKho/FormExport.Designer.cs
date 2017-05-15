@@ -300,6 +300,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormExport";
             this.Text = "Phiếu xuất";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormExport_FormClosing);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.groupBox2.ResumeLayout(false);

@@ -149,12 +149,12 @@ namespace QLNhaKho
             {
                 try
                 {
-                    var res = db.Database.SqlQuery<CommodityView>("commodity_view @makho",
-                        new object[]
-                        {
-                            new SqlParameter("@makho", cbxStorage.SelectedValue)
-                        });
-                    dgvList.DataSource = res;
+                    //var res = db.Database.SqlQuery<CommodityView>("commodity_view @makho",
+                    //    new object[]
+                    //    {
+                    //        new SqlParameter("@makho", cbxStorage.SelectedValue)
+                    //    });
+                    //dgvList.DataSource = res;
                 }
                 catch(Exception ex)
                 {
@@ -210,6 +210,12 @@ namespace QLNhaKho
             txtProducer.Enabled = true;
 
             btnSave.Enabled = true;
+        }
+
+        private void FormView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormMain u = new FormMain();
+            u.Show();
         }
     }
 }

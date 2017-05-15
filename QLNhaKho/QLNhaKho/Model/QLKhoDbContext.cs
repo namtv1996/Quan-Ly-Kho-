@@ -1,4 +1,4 @@
-namespace QLNhaKho
+namespace QLNhaKho.Model
 {
     using System;
     using System.Data.Entity;
@@ -22,7 +22,6 @@ namespace QLNhaKho
         public virtual DbSet<Nhansu> Nhansus { get; set; }
         public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
         public virtual DbSet<PhieuXuat> PhieuXuats { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -40,6 +39,10 @@ namespace QLNhaKho
                 .HasMany(e => e.PhieuXuats)
                 .WithRequired(e => e.HangHoa)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<KhachHang>()
+                .Property(e => e.sdt)
+                .IsUnicode(false);
 
             modelBuilder.Entity<KhachHang>()
                 .HasMany(e => e.PhieuXuats)

@@ -34,3 +34,22 @@ D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormExport.resources
 D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormMain.resources
 D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormLogin.resources
 D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormCustomer.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.exe.config
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.exe
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.pdb
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.exe
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.pdb
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.dll
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.xml
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.csprojResolveAssemblyReference.cache
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormView.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormImport.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormExport.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormMain.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormLogin.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormCustomer.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Properties.Resources.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.csproj.GenerateResource.Cache
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Kho - Đỗ Hưng\Quan-Ly-Kho-\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormHelp.resources

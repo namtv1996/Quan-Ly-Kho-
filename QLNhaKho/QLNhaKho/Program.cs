@@ -16,7 +16,7 @@ namespace QLNhaKho
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormExport());
+            Application.Run(new FormMain());
         }
     }
 }

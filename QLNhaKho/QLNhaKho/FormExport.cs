@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLNhaKho.Model;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -126,6 +127,12 @@ namespace QLNhaKho
                 cmbCustomerID.ValueMember = "makh";
             }
             LoadData();
+        }
+
+        private void FormExport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormMain u = new FormMain();
+            u.Show();
         }
     }
 }

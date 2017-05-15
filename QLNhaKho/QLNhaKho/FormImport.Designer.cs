@@ -276,7 +276,7 @@
             this.nudAmount.Size = new System.Drawing.Size(237, 20);
             this.nudAmount.TabIndex = 26;
             // 
-            // Form2
+            // FormImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -308,8 +308,9 @@
             this.Controls.Add(this.txtCommodityName);
             this.Controls.Add(this.btnMoreSuppliers);
             this.Controls.Add(this.cmbSupplier);
-            this.Name = "Form2";
+            this.Name = "FormImport";
             this.Text = "Phiếu nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormImport_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,4 @@
-namespace QLNhaKho
+namespace QLNhaKho.Model
 {
     using System;
     using System.Collections.Generic;

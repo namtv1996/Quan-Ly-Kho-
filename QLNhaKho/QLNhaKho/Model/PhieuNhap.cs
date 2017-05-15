@@ -1,4 +1,4 @@
-namespace QLNhaKho
+namespace QLNhaKho.Model
 {
     using System;
     using System.Collections.Generic;
@@ -22,6 +22,8 @@ namespace QLNhaKho
         public DateTime? ngaynhap { get; set; }
 
         public int? soluong { get; set; }
+
+        public int? danhan { get; set; }
 
         [StringLength(100)]
         public string ghichu { get; set; }

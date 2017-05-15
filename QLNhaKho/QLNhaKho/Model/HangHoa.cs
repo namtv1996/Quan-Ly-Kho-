@@ -1,4 +1,4 @@
-namespace QLNhaKho
+namespace QLNhaKho.Model
 {
     using System;
     using System.Collections.Generic;
@@ -26,12 +26,12 @@ namespace QLNhaKho
         [StringLength(50)]
         public string tinhtrang { get; set; }
 
-        public DateTime? hansd { set; get; }
+        public DateTime? ngaysx { get; set; }
 
-        public DateTime? ngaysx { set; get; }
+        public DateTime? hansd { get; set; }
 
         [StringLength(50)]
-        public string nhasx { set; get; }
+        public string nhasx { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHangHoa> ChiTietHangHoas { get; set; }

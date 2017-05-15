@@ -379,6 +379,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormView";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormView_FormClosing);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.groupBox2.ResumeLayout(false);

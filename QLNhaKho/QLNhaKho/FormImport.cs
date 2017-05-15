@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLNhaKho.Model;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -64,6 +65,12 @@ namespace QLNhaKho
                 cmbStorage.ValueMember = "makho";
                 cmbStorage.DisplayMember = "tenkho";
             }
+        }
+
+        private void FormImport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormMain u = new FormMain();
+            u.Show();
         }
     }
 }
