@@ -247,6 +247,11 @@
             // nudAmount
             // 
             this.nudAmount.Location = new System.Drawing.Point(432, 89);
+            this.nudAmount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudAmount.Name = "nudAmount";
             this.nudAmount.Size = new System.Drawing.Size(237, 20);
             this.nudAmount.TabIndex = 26;

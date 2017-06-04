@@ -24,14 +24,11 @@ namespace QLNhaKho
             Activated += Form1_Activated;
             btnReport.Click += BtnReport_Click;
             btnSearch.Click += BtnSearch_Click;
+            txtSearchBox.KeyDown += TxtSearchBox_KeyDown;
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void SearchResult()
         {
-            if (txtSearchBox.Text == string.Empty)
-            {
-                return;
-            }
             using (QLKhoDbContext db = new QLKhoDbContext())
             {
                 try
@@ -51,7 +48,22 @@ namespace QLNhaKho
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
 
+        private void TxtSearchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter && txtSearchBox.Text != string.Empty)
+            {
+                SearchResult();
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearchBox.Text != string.Empty)
+            {
+                SearchResult();
+            }
         }
 
         private void BtnReport_Click(object sender, EventArgs e)

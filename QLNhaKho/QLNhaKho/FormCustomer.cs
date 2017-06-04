@@ -27,6 +27,7 @@ namespace QLNhaKho
             btnSave.Click += BtnSave_Click;
             dgvList.CellClick += DgvList_CellClick;
             btnSearch.Click += BtnSearch_Click;
+            txtSearchBox.KeyDown += TxtSearchBox_KeyDown;
 
             for (int k = 1980; k <= 2017; k++)
             {
@@ -35,9 +36,9 @@ namespace QLNhaKho
 
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void SearchResult()
         {
-            using (QLKhoDbContext db=new QLKhoDbContext())
+            using (QLKhoDbContext db = new QLKhoDbContext())
             {
                 try
                 {
@@ -47,10 +48,26 @@ namespace QLNhaKho
                             new SqlParameter("@value", txtSearchBox.Text)
                         }).ToList();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
+            }
+        }
+
+        private void TxtSearchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter && txtSearchBox.Text != string.Empty)
+            {
+                SearchResult();
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearchBox.Text != string.Empty)
+            {
+                SearchResult();
             }
         }
 

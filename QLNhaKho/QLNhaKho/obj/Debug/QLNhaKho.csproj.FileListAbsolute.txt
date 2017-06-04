@@ -34,3 +34,23 @@ D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormExport.resources
 D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormMain.resources
 D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormLogin.resources
 D:\Study\ThucTapNhom\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormCustomer.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.exe.config
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.exe
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\bin\Debug\QLNhaKho.pdb
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.dll
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.SqlServer.dll
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.xml
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\bin\Debug\EntityFramework.SqlServer.xml
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.csprojResolveAssemblyReference.cache
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormView.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormImport.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormExport.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormMain.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormLogin.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormCustomer.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.Properties.Resources.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.csproj.GenerateResource.Cache
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.exe
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.pdb
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormQuantity.resources
+D:\Study\ThucTapNhom\QL Nhà Kho\QLNhaKho\QLNhaKho\obj\Debug\QLNhaKho.FormEmployee.resources

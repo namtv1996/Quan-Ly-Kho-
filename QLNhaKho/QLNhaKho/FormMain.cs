@@ -33,18 +33,18 @@ namespace QLNhaKho
             if (e.Node.Name == "Xem")
             {
                 FormView form1 = new FormView();
-                form1.Show();
+                form1.ShowDialog();
             }
             else if (e.Node.Name == "Nhap")
             {
                 FormImport form2 = new FormImport();
-                form2.Show();
+                form2.ShowDialog();
 
             }
             else if (e.Node.Name == "Xuat")
             {
                 FormExport form3 = new FormExport();
-                form3.Show();
+                form3.ShowDialog();
             }
             else if (e.Node.Name == "Help")
             {
@@ -53,7 +53,8 @@ namespace QLNhaKho
             }
             else if (e.Node.Name == "NhanSu")
             {
-                // user info here
+                FormEmployee frm = new FormEmployee();
+                frm.ShowDialog();
             }
             else if (e.Node.Name == "KhachHang")
             {

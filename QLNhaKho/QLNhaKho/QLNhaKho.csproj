@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExM.cs" />
+    <Compile Include="FormEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmployee.Designer.cs">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormImport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     <Compile Include="FormCustomer.Designer.cs">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuantity.Designer.cs">
+      <DependentUpon>FormQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ChiTietHangHoa.cs" />
     <Compile Include="Model\ChucVu.cs" />
     <Compile Include="Model\DiaDiem.cs" />
@@ -110,6 +122,12 @@
     <Compile Include="Model\ThongKeXuat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEmployee.resx">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuantity.resx">
+      <DependentUpon>FormQuantity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormView.resx">
       <DependentUpon>FormView.cs</DependentUpon>
     </EmbeddedResource>

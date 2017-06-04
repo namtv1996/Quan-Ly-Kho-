@@ -35,6 +35,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxSelection = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.cbxDayOfBirth = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbxSelection = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -152,6 +152,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
+            // cbxSelection
+            // 
+            this.cbxSelection.FormattingEnabled = true;
+            this.cbxSelection.Items.AddRange(new object[] {
+            "All",
+            "CustomerID",
+            "CustomerName",
+            "Gender",
+            "DateOfBirth",
+            "Address",
+            "Phone"});
+            this.cbxSelection.Location = new System.Drawing.Point(272, 256);
+            this.cbxSelection.Name = "cbxSelection";
+            this.cbxSelection.Size = new System.Drawing.Size(121, 21);
+            this.cbxSelection.TabIndex = 55;
+            this.cbxSelection.Text = "All";
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(602, 100);
@@ -221,7 +238,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(644, 254);
+            this.btnSearch.Location = new System.Drawing.Point(614, 254);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(63, 23);
             this.btnSearch.TabIndex = 48;
@@ -230,7 +247,7 @@
             // 
             // txtSearchBox
             // 
-            this.txtSearchBox.Location = new System.Drawing.Point(429, 256);
+            this.txtSearchBox.Location = new System.Drawing.Point(399, 256);
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(209, 20);
             this.txtSearchBox.TabIndex = 47;
@@ -412,23 +429,6 @@
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // cbxSelection
-            // 
-            this.cbxSelection.FormattingEnabled = true;
-            this.cbxSelection.Items.AddRange(new object[] {
-            "All",
-            "CustomerID",
-            "CustomerName",
-            "Gender",
-            "DateOfBirth",
-            "Address",
-            "Phone"});
-            this.cbxSelection.Location = new System.Drawing.Point(302, 256);
-            this.cbxSelection.Name = "cbxSelection";
-            this.cbxSelection.Size = new System.Drawing.Size(121, 21);
-            this.cbxSelection.TabIndex = 55;
-            this.cbxSelection.Text = "All";
             // 
             // FormCustomer
             // 

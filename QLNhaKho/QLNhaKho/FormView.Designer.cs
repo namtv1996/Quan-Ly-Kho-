@@ -33,6 +33,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbxGoodsType = new System.Windows.Forms.ComboBox();
             this.cbxSelection = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
             this.nudAmount = new System.Windows.Forms.NumericUpDown();
             this.cmbSupplier = new System.Windows.Forms.ComboBox();
@@ -57,7 +58,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.cbxStorage = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -150,6 +150,15 @@
             this.cbxSelection.TabIndex = 32;
             this.cbxSelection.Text = "All";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(360, 64);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(26, 13);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Kho";
+            // 
             // btnReport
             // 
             this.btnReport.Location = new System.Drawing.Point(270, 212);
@@ -219,9 +228,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(608, 261);
+            this.btnSearch.Location = new System.Drawing.Point(624, 261);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(59, 23);
             this.btnSearch.TabIndex = 22;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -232,7 +241,7 @@
             this.txtSearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearchBox.Location = new System.Drawing.Point(400, 263);
             this.txtSearchBox.Name = "txtSearchBox";
-            this.txtSearchBox.Size = new System.Drawing.Size(202, 20);
+            this.txtSearchBox.Size = new System.Drawing.Size(218, 20);
             this.txtSearchBox.TabIndex = 20;
             // 
             // btnRefresh
@@ -241,7 +250,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 19;
-            this.btnRefresh.Text = "Cập nhật";
+            this.btnRefresh.Text = "Re-load";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // btnExport
@@ -352,15 +361,6 @@
             this.cbxStorage.Name = "cbxStorage";
             this.cbxStorage.Size = new System.Drawing.Size(239, 21);
             this.cbxStorage.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(360, 64);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(26, 13);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Kho";
             // 
             // FormView
             // 

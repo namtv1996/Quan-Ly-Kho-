@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Nhan su");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Xem chi tiet");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Nhap hang hoa");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Xuat hang hoa");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Khach hang");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Thong ke");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Tro giup");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Thống kê");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Nhân sự");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Hàng hóa");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Nhập hàng hóa");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Xuất hàng hóa");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Khách hàng");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Trợ giúp");
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -50,20 +50,20 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "NhanSu";
-            treeNode1.Text = "Nhan su";
-            treeNode2.Name = "Xem";
-            treeNode2.Text = "Xem chi tiet";
-            treeNode3.Name = "Nhap";
-            treeNode3.Text = "Nhap hang hoa";
-            treeNode4.Name = "Xuat";
-            treeNode4.Text = "Xuat hang hoa";
-            treeNode5.Name = "KhachHang";
-            treeNode5.Text = "Khach hang";
-            treeNode6.Name = "ThongKe";
-            treeNode6.Text = "Thong ke";
+            treeNode1.Name = "ThongKe";
+            treeNode1.Text = "Thống kê";
+            treeNode2.Name = "NhanSu";
+            treeNode2.Text = "Nhân sự";
+            treeNode3.Name = "Xem";
+            treeNode3.Text = "Hàng hóa";
+            treeNode4.Name = "Nhap";
+            treeNode4.Text = "Nhập hàng hóa";
+            treeNode5.Name = "Xuat";
+            treeNode5.Text = "Xuất hàng hóa";
+            treeNode6.Name = "KhachHang";
+            treeNode6.Text = "Khách hàng";
             treeNode7.Name = "Help";
-            treeNode7.Text = "Tro giup";
+            treeNode7.Text = "Trợ giúp";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
