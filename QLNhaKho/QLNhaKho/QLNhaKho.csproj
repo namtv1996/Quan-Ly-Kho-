@@ -56,11 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExM.cs" />
-    <Compile Include="FormHelp.cs">
+    <Compile Include="FormEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHelp.Designer.cs">
-      <DependentUpon>FormHelp.cs</DependentUpon>
+    <Compile Include="FormEmployee.Designer.cs">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="FormImport.cs">
       <SubType>Form</SubType>
@@ -92,28 +92,41 @@
     <Compile Include="FormCustomer.Designer.cs">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuantity.Designer.cs">
+      <DependentUpon>FormQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChiTietHangHoa.cs" />
+    <Compile Include="Model\ChucVu.cs" />
+    <Compile Include="Model\DiaDiem.cs" />
+    <Compile Include="Model\HangHoa.cs" />
+    <Compile Include="Model\KhachHang.cs" />
+    <Compile Include="Model\Kho.cs" />
+    <Compile Include="Model\LoaiHangHoa.cs" />
+    <Compile Include="Model\NhaCungCap.cs" />
+    <Compile Include="Model\Nhansu.cs" />
+    <Compile Include="Model\PhieuNhap.cs" />
+    <Compile Include="Model\PhieuXuat.cs" />
+    <Compile Include="Model\QLKhoDbContext.cs" />
+    <Compile Include="Model\XemHangHoa.cs" />
     <Compile Include="FormView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormView.Designer.cs">
       <DependentUpon>FormView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ChiTietHangHoa.cs" />
-    <Compile Include="Model\ChucVu.cs" />
-    <Compile Include="Model\CommodityView.cs" />
-    <Compile Include="Model\DiaDiem.cs" />
-    <Compile Include="Model\HangHoa.cs" />
-    <Compile Include="Model\KhachHang.cs" />
-    <Compile Include="Model\Kho.cs" />
-    <Compile Include="Model\NhaCungCap.cs" />
-    <Compile Include="Model\Nhansu.cs" />
-    <Compile Include="Model\PhieuNhap.cs" />
-    <Compile Include="Model\PhieuXuat.cs" />
-    <Compile Include="Model\QLKhoDbContext.cs" />
+    <Compile Include="Model\ThongKeHH.cs" />
+    <Compile Include="Model\ThongKeNhap.cs" />
+    <Compile Include="Model\ThongKeXuat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormHelp.resx">
-      <DependentUpon>FormHelp.cs</DependentUpon>
+    <EmbeddedResource Include="FormEmployee.resx">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuantity.resx">
+      <DependentUpon>FormQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormView.resx">
       <DependentUpon>FormView.cs</DependentUpon>

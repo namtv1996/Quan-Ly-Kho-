@@ -26,6 +26,8 @@ namespace QLNhaKho
             btnDelete.Click += BtnDelete_Click;
             btnSave.Click += BtnSave_Click;
             dgvList.CellClick += DgvList_CellClick;
+            btnSearch.Click += BtnSearch_Click;
+            txtSearchBox.KeyDown += TxtSearchBox_KeyDown;
 
             for (int k = 1980; k <= 2017; k++)
             {
@@ -34,8 +36,47 @@ namespace QLNhaKho
 
         }
 
+        private void SearchResult()
+        {
+            using (QLKhoDbContext db = new QLKhoDbContext())
+            {
+                try
+                {
+                    dgvList.DataSource = db.Database.SqlQuery<KhachHang>("sp_khachhang_search @value",
+                        new object[]
+                        {
+                            new SqlParameter("@value", txtSearchBox.Text)
+                        }).ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void TxtSearchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter && txtSearchBox.Text != string.Empty)
+            {
+                SearchResult();
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearchBox.Text != string.Empty)
+            {
+                SearchResult();
+            }
+        }
+
         private void DgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = false;
+
             var row = dgvList.CurrentRow;
             txtCustomerID.Text = row.Cells["makh"].Value.ToString();
             txtCustomerName.Text = row.Cells["tenkh"].Value.ToString();
@@ -77,13 +118,13 @@ namespace QLNhaKho
                     object[] obj =
                     {
                         new SqlParameter("@tenkh", txtCustomerName.Text),
-                        new SqlParameter("@gioitinh", rbnFemale.Checked ? "Nu" : "Nam"),
+                        new SqlParameter("@gioitinh", rbnFemale.Checked ? "Nữ" : "Nam"),
                         new SqlParameter("@ngaysinh", DateTime.Parse(dob)),
                         new SqlParameter("@diachi", rtbCustomerAddress.Text),
                         new SqlParameter("@sdt", txtCustomerPN.Text)
                     };
                     if(!edit)
-                        res = db.Database.ExecuteSqlCommand("sp_customer_insert " +
+                        res = db.Database.ExecuteSqlCommand("sp_khachhang_them " +
                             "@tenkh, @gioitinh, @ngaysinh, @diachi, @sdt", obj);
                     else
                     {
@@ -96,7 +137,7 @@ namespace QLNhaKho
                             new SqlParameter("@diachi", rtbCustomerAddress.Text),
                             new SqlParameter("@sdt", txtCustomerPN.Text)
                         };
-                        res = db.Database.ExecuteSqlCommand("sp_customer_update " +
+                        res = db.Database.ExecuteSqlCommand("sp_khachhang_sua " +
                             "@makh, @tenkh, @gioitinh, @ngaysinh, @diachi, @sdt", obj);
                     }
                 }
@@ -208,7 +249,7 @@ namespace QLNhaKho
             cbxDayOfBirth.Text = string.Empty;
             rtbCustomerAddress.Text = string.Empty;
             txtCustomerPN.Text = string.Empty;
-            txtSearch.Text = string.Empty;
+            txtSearchBox.Text = string.Empty;
         }
 
         private void Form6_Load(object sender, EventArgs e)

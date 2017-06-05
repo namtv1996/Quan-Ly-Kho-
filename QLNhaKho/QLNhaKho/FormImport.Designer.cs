@@ -31,17 +31,13 @@
             this.cmbSupplier = new System.Windows.Forms.ComboBox();
             this.btnMoreSuppliers = new System.Windows.Forms.Button();
             this.txtCommodityName = new System.Windows.Forms.TextBox();
-            this.dtpProductingDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpExpiringDate = new System.Windows.Forms.DateTimePicker();
             this.txtProducer = new System.Windows.Forms.TextBox();
             this.rtbState = new System.Windows.Forms.RichTextBox();
             this.dtpImportingDate = new System.Windows.Forms.DateTimePicker();
-            this.cbxReceived = new System.Windows.Forms.CheckBox();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,6 +50,7 @@
             this.btnMoreStorages = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.nudAmount = new System.Windows.Forms.NumericUpDown();
+            this.cbxGoodsType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,32 +78,18 @@
             this.txtCommodityName.Size = new System.Drawing.Size(252, 20);
             this.txtCommodityName.TabIndex = 2;
             // 
-            // dtpProductingDate
-            // 
-            this.dtpProductingDate.Location = new System.Drawing.Point(98, 85);
-            this.dtpProductingDate.Name = "dtpProductingDate";
-            this.dtpProductingDate.Size = new System.Drawing.Size(252, 20);
-            this.dtpProductingDate.TabIndex = 3;
-            // 
-            // dtpExpiringDate
-            // 
-            this.dtpExpiringDate.Location = new System.Drawing.Point(98, 111);
-            this.dtpExpiringDate.Name = "dtpExpiringDate";
-            this.dtpExpiringDate.Size = new System.Drawing.Size(252, 20);
-            this.dtpExpiringDate.TabIndex = 4;
-            // 
             // txtProducer
             // 
-            this.txtProducer.Location = new System.Drawing.Point(98, 137);
+            this.txtProducer.Location = new System.Drawing.Point(98, 112);
             this.txtProducer.Name = "txtProducer";
             this.txtProducer.Size = new System.Drawing.Size(252, 20);
             this.txtProducer.TabIndex = 5;
             // 
             // rtbState
             // 
-            this.rtbState.Location = new System.Drawing.Point(98, 163);
+            this.rtbState.Location = new System.Drawing.Point(98, 138);
             this.rtbState.Name = "rtbState";
-            this.rtbState.Size = new System.Drawing.Size(252, 53);
+            this.rtbState.Size = new System.Drawing.Size(252, 81);
             this.rtbState.TabIndex = 6;
             this.rtbState.Text = "";
             // 
@@ -116,16 +99,6 @@
             this.dtpImportingDate.Name = "dtpImportingDate";
             this.dtpImportingDate.Size = new System.Drawing.Size(237, 20);
             this.dtpImportingDate.TabIndex = 7;
-            // 
-            // cbxReceived
-            // 
-            this.cbxReceived.AutoSize = true;
-            this.cbxReceived.Location = new System.Drawing.Point(432, 114);
-            this.cbxReceived.Name = "cbxReceived";
-            this.cbxReceived.Size = new System.Drawing.Size(76, 17);
-            this.cbxReceived.TabIndex = 9;
-            this.cbxReceived.Text = "Đã nhận ?";
-            this.cbxReceived.UseVisualStyleBackColor = true;
             // 
             // rtbNote
             // 
@@ -160,21 +133,12 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Ngày sản xuất";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Hạn sử dụng";
+            this.label3.Text = "Loại hàng hóa";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 140);
+            this.label5.Location = new System.Drawing.Point(17, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 15;
@@ -183,7 +147,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 166);
+            this.label6.Location = new System.Drawing.Point(17, 143);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 16;
@@ -272,9 +236,22 @@
             // nudAmount
             // 
             this.nudAmount.Location = new System.Drawing.Point(432, 89);
+            this.nudAmount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudAmount.Name = "nudAmount";
             this.nudAmount.Size = new System.Drawing.Size(237, 20);
             this.nudAmount.TabIndex = 26;
+            // 
+            // cbxGoodsType
+            // 
+            this.cbxGoodsType.FormattingEnabled = true;
+            this.cbxGoodsType.Location = new System.Drawing.Point(98, 85);
+            this.cbxGoodsType.Name = "cbxGoodsType";
+            this.cbxGoodsType.Size = new System.Drawing.Size(252, 21);
+            this.cbxGoodsType.TabIndex = 27;
             // 
             // FormImport
             // 
@@ -282,6 +259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(696, 304);
+            this.Controls.Add(this.cbxGoodsType);
             this.Controls.Add(this.nudAmount);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnMoreStorages);
@@ -294,23 +272,18 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rtbNote);
-            this.Controls.Add(this.cbxReceived);
             this.Controls.Add(this.dtpImportingDate);
             this.Controls.Add(this.rtbState);
             this.Controls.Add(this.txtProducer);
-            this.Controls.Add(this.dtpExpiringDate);
-            this.Controls.Add(this.dtpProductingDate);
             this.Controls.Add(this.txtCommodityName);
             this.Controls.Add(this.btnMoreSuppliers);
             this.Controls.Add(this.cmbSupplier);
             this.Name = "FormImport";
             this.Text = "Phiếu nhập";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormImport_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -322,17 +295,13 @@
         private System.Windows.Forms.ComboBox cmbSupplier;
         private System.Windows.Forms.Button btnMoreSuppliers;
         private System.Windows.Forms.TextBox txtCommodityName;
-        private System.Windows.Forms.DateTimePicker dtpProductingDate;
-        private System.Windows.Forms.DateTimePicker dtpExpiringDate;
         private System.Windows.Forms.TextBox txtProducer;
         private System.Windows.Forms.RichTextBox rtbState;
         private System.Windows.Forms.DateTimePicker dtpImportingDate;
-        private System.Windows.Forms.CheckBox cbxReceived;
         private System.Windows.Forms.RichTextBox rtbNote;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -345,5 +314,6 @@
         private System.Windows.Forms.Button btnMoreStorages;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown nudAmount;
+        private System.Windows.Forms.ComboBox cbxGoodsType;
     }
 }

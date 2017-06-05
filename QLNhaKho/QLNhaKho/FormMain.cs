@@ -14,15 +14,12 @@ namespace QLNhaKho
             Load += Form4_Load;
             treeView1.NodeMouseClick += TreeView1_NodeMouseClick;
             FormClosed += FormMain_FormClosed;
+            this.Activated += FormMain_Activated;
+        }
 
-            //tối ưu hóa load form
-            ExM.formCustomer = new FormCustomer();
-            ExM.formExport = new FormExport();
-            ExM.formHelp = new FormHelp();
-            ExM.formImport = new FormImport();
-            ExM.formLogin = new FormLogin();
-           // ExM.formMain = new FormMain();
-            ExM.formView = new FormView();
+        private void FormMain_Activated(object sender, EventArgs e)
+        {
+            Form4_Load(sender, e);
         }
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -32,89 +29,76 @@ namespace QLNhaKho
 
         private void TreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            this.Hide();
             if (e.Node.Name == "Xem")
             {
-                this.Hide();
                 FormView form1 = new FormView();
-                form1.Show();
-            
-                //ExM.formView.Show();
+                form1.ShowDialog();
             }
             else if (e.Node.Name == "Nhap")
             {
-                this.Hide();
                 FormImport form2 = new FormImport();
-                form2.Show();
-
+                form2.ShowDialog();
 
             }
             else if (e.Node.Name == "Xuat")
             {
-                this.Hide();
                 FormExport form3 = new FormExport();
-                form3.Show();
-            }
-
-            else if (e.Node.Name == "ThongTinNguoiDung")
-            {
-                // user info here
-            }
-            else if (e.Node.Name == "ThemNguoiDung")
-            {
-                // adding new user here
+                form3.ShowDialog();
             }
             else if (e.Node.Name == "Help")
             {
-                this.Hide();
-                ExM.formHelp.Show();
-               // form.Show();
+                // helping here
 
             }
+            else if (e.Node.Name == "NhanSu")
+            {
+                FormEmployee frm = new FormEmployee();
+                frm.ShowDialog();
+            }
+            else if (e.Node.Name == "KhachHang")
+            {
+                FormCustomer frmcus = new FormCustomer();
+                frmcus.ShowDialog();
+            }
+            this.Show();
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
             using (var db = new QLKhoDbContext())
             {
-                using (var conn = db.Database.Connection)
+                try
                 {
-                    conn.Open();
-                    var cmd = conn.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    // load importing report
-                    cmd.CommandText = "select top 7 cast(ngaynhap as date) ngaynhap, count(*) soluong " +
-                        "from phieunhap group by cast(ngaynhap as date)";
-                    SqlDataAdapter da = new SqlDataAdapter((SqlCommand)cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    foreach (DataRow row in dt.Rows)
+                    // thong ke hang hoa nhap
+                    foreach (var item in db.Database.SqlQuery<ThongKeNhap>("sp_hh_thongkenhap", 
+                        new object[] { }))
                     {
-                        chart1.Series["Import"].Points.AddXY(row.Field<DateTime>("ngaynhap"),
-                            new object[] { row.Field<int>("soluong") });
+                        chart1.Series["Import"].Points.AddXY(item.ngaynhap.Day,
+                            new object[] { item.soluong });
                     }
 
-                    // load exporting report
-                    cmd.CommandText = "select top 10 cast(ngayxuat as date) ngayxuat, count(*) soluong "
-                        + "from phieuxuat group by cast(ngayxuat as date)";
-                    da.SelectCommand = (SqlCommand)cmd;
-                    dt = new DataTable();
-                    da.Fill(dt);
-
-                    foreach (DataRow row in dt.Rows)
+                    // thong ke hoang hoa xuat
+                    foreach (var item in db.Database.SqlQuery<ThongKeXuat>("sp_hh_thongkexuat",
+                        new object[] { }))
                     {
-                        chart1.Series["Export"].Points.AddXY(row.Field<DateTime>("ngayxuat"),
-                            new object[] { row.Field<int>("soluong") });
+                        chart1.Series["Export"].Points.AddXY(item.ngayxuat.Day,
+                            new object[] { item.soluong });
                     }
 
-                    conn.Close();
+
+                    foreach (var item in db.Database.SqlQuery<ThongKeHH>("sp_hh_thongkesoluong",
+                        new object[] { }))
+                    {
+                        chart1.Series["Storage"].Points.AddXY(item.ngaynhap.Day,
+                            new object[] { item.soluongton });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
         }
     }
 }

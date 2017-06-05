@@ -38,16 +38,15 @@ namespace QLNhaKho
                     new SqlParameter("@mancc",(int)cmbSupplier.SelectedValue),
                     new SqlParameter("@ngaynhap",dtpImportingDate.Value),
                     new SqlParameter("@soluong",int.Parse(nudAmount.Text)),
-                    new SqlParameter("@danhan",cbxReceived.Checked ? 1:0),
+                  //  new SqlParameter("@danhan",cbxReceived.Checked ? 1:0),
                     new SqlParameter("@ghichu",rtbNote.Text),
                     new SqlParameter("@ten",txtCommodityName.Text),
                     new SqlParameter("@tinhtrang",rtbState.Text),
-                    new SqlParameter("@ngaysx",dtpProductingDate.Value),
-                    new SqlParameter("@hansd",dtpExpiringDate.Value),
+                    new SqlParameter("@maloaihh",(int)cbxGoodsType.SelectedValue),
                     new SqlParameter("@nhasx",txtProducer.Text)
                 };
-                int res = db.Database.ExecuteSqlCommand(@"dbo.commodity_insertion @makho,@mancc,
-                @ngaynhap,@soluong,@danhan,@ghichu,@ten,@tinhtrang,@ngaysx,@hansd,@nhasx",obj);
+                int res = db.Database.ExecuteSqlCommand(@"sp_hh_nhap @makho,@mancc,
+                @ngaynhap,@soluong,@ghichu,@ten,@tinhtrang,@maloaihh,@nhasx",obj);
                 if(res > 0)
                     MessageBox.Show($"Đã thêm hàng hóa!");
             }
@@ -64,13 +63,12 @@ namespace QLNhaKho
                 cmbStorage.DataSource = (db.Khoes.Select(x => x)).ToList();
                 cmbStorage.ValueMember = "makho";
                 cmbStorage.DisplayMember = "tenkho";
+
+                cbxGoodsType.DataSource = db.LoaiHangHoas.ToList();
+                cbxGoodsType.DisplayMember = "tenloaihh";
+                cbxGoodsType.ValueMember = "maloaihh";
             }
         }
 
-        private void FormImport_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormMain u = new FormMain();
-            u.Show();
-        }
     }
 }

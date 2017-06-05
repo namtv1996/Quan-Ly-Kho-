@@ -1,5 +1,6 @@
 ﻿using QLNhaKho.Model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,31 +16,31 @@ namespace QLNhaKho
             LockControls();
             Load += Form1_Load;
             dgvList.DataError += DgvList_DataError;
-            btnImport.Click += BtnAdd_Click;
+            btnImport.Click += BtnImport_Click;
             btnSave.Click += BtnSave_Click;
             btnEdit.Click += BtnEdit_Click;
-            btnExport.Click += BtnDelete_Click;
+            btnExport.Click += BtnExport_Click;
             dgvList.CellClick += DgvList_CellClick;
             Activated += Form1_Activated;
             btnReport.Click += BtnReport_Click;
             btnSearch.Click += BtnSearch_Click;
+            txtSearchBox.KeyDown += TxtSearchBox_KeyDown;
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void SearchResult()
         {
-            if(txtSearchBox.Text==string.Empty)
-            {
-                return;
-            }
-            using (QLKhoDbContext db=new QLKhoDbContext())
+            using (QLKhoDbContext db = new QLKhoDbContext())
             {
                 try
                 {
-                    var res = db.Database.SqlQuery<CommodityView>("commodity_view @makho",
+                    List<XemHangHoa> res = new List<XemHangHoa>();
+                    res = db.Database.SqlQuery<XemHangHoa>("sp_hh_search @value",
                         new object[]
                         {
-                            new SqlParameter("@makho", cbxStorage.SelectedValue)
-                        });
+                                    new SqlParameter("@value", txtSearchBox.Text)
+                        }).ToList();
+
+
                     dgvList.DataSource = res;
                 }
                 catch (Exception ex)
@@ -47,7 +48,22 @@ namespace QLNhaKho
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
-            
+        }
+
+        private void TxtSearchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter && txtSearchBox.Text != string.Empty)
+            {
+                SearchResult();
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearchBox.Text != string.Empty)
+            {
+                SearchResult();
+            }
         }
 
         private void BtnReport_Click(object sender, EventArgs e)
@@ -63,30 +79,23 @@ namespace QLNhaKho
 
         private void DgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvList.Rows[e.RowIndex].Cells[0].Value != null)
-                txtID.Text = dgvList.Rows[e.RowIndex].Cells[0].Value.ToString();
-            if (dgvList.Rows[e.RowIndex].Cells[1].Value != null)
-                txtName.Text = dgvList.Rows[e.RowIndex].Cells[1].Value.ToString();
-            if (dgvList.Rows[e.RowIndex].Cells[2].Value != null)
-                rtbState.Text = dgvList.Rows[e.RowIndex].Cells[2].Value.ToString();
-            if (dgvList.Rows[e.RowIndex].Cells[3].Value != null)
-                dtpProductDate.Value = (DateTime)dgvList.Rows[e.RowIndex].Cells[3].Value;
-            if (dgvList.Rows[e.RowIndex].Cells[4].Value != null)
-                dtpExpireDate.Value = (DateTime)dgvList.Rows[e.RowIndex].Cells[4].Value;
-            if (dgvList.Rows[e.RowIndex].Cells[5].Value != null)
-                txtProducer.Text = dgvList.Rows[e.RowIndex].Cells[5].Value.ToString();
-            if (dgvList.Rows[e.RowIndex].Cells[6].Value != null)
-                nudAmount.Text = dgvList.Rows[e.RowIndex].Cells[6].Value.ToString();
-            if (dgvList.Rows[e.RowIndex].Cells[7].Value != null)
-                dtpEntryDate.Value = (DateTime)dgvList.Rows[e.RowIndex].Cells[7].Value;
-            if (dgvList.Rows[e.RowIndex].Cells[8].Value != null)
-                cmbSupplier.SelectedValue = dgvList.Rows[e.RowIndex].Cells[8].Value;
+            var row = dgvList.CurrentRow;
+
+            txtID.Text = row.Cells["mahh"].Value.ToString();
+            txtName.Text = row.Cells["tenhh"].Value.ToString();
+            rtbState.Text = row.Cells["tinhtrang"].Value.ToString();
+            txtProducer.Text = row.Cells["nhasx"].Value.ToString();
+            nudAmount.Text = row.Cells["soluongton"].Value.ToString();
+            dtpEntryDate.Value = (DateTime)row.Cells["ngaynhap"].Value;
+            cmbSupplier.SelectedValue = row.Cells["mancc"].Value;
+            cbxGoodsType.SelectedValue = row.Cells["maloaihh"].Value;
+            cbxStorage.SelectedValue = row.Cells["makho"].Value;
 
             LockControls();
             btnEdit.Enabled = true;
         }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
+        private void BtnExport_Click(object sender, EventArgs e)
         {
             FormExport form3 = new FormExport();
             form3.Show();
@@ -109,14 +118,13 @@ namespace QLNhaKho
                     new SqlParameter("@tenhh",txtName.Text),
                     new SqlParameter("@tinhtrang",rtbState.Text),
                     new SqlParameter("@mancc",(int)cmbSupplier.SelectedValue),
-                    new SqlParameter("@ngaysx",dtpProductDate.Value),
-                    new SqlParameter("@hansd",dtpExpireDate.Value),
+                    new SqlParameter("@maloaihh", (int)cbxGoodsType.SelectedValue),
                     new SqlParameter("@soluongton",int.Parse(nudAmount.Text)),
                     new SqlParameter("@ngaynhap",dtpEntryDate.Value),
                     new SqlParameter("@nhasx",txtProducer.Text)
                 };
-                int res = db.Database.ExecuteSqlCommand("dbo.commodity_modification @makho,@mahh,@tenhh,@tinhtrang," +
-                    "@mancc,@ngaysx,@hansd,@soluongton,@ngaynhap,@nhasx", obj);
+                int res = db.Database.ExecuteSqlCommand("sp_hh_sua @makho,@mahh,@tenhh,@tinhtrang," +
+                    "@mancc,@maloaihh,@soluongton,@ngaynhap,@nhasx", obj);
                 MessageBox.Show($"result = {res}");
                 if (res > 0)
                 {
@@ -126,7 +134,7 @@ namespace QLNhaKho
             }
         }
 
-        private void BtnAdd_Click(object sender, EventArgs e)
+        private void BtnImport_Click(object sender, EventArgs e)
         {
             FormImport form2 = new FormImport();
             form2.Show();
@@ -147,19 +155,16 @@ namespace QLNhaKho
         {
             using (var db = new QLKhoDbContext())
             {
-                try
-                {
-                    //var res = db.Database.SqlQuery<CommodityView>("commodity_view @makho",
-                    //    new object[]
-                    //    {
-                    //        new SqlParameter("@makho", cbxStorage.SelectedValue)
-                    //    });
-                    //dgvList.DataSource = res;
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
+                //try
+                //{
+                   var res = db.Database.SqlQuery<XemHangHoa>("sp_hh_xem",
+                        new object[] { });
+                    dgvList.DataSource = res.ToList();
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("Error: " + ex.Message);
+                //}
             }
         }
 
@@ -167,16 +172,17 @@ namespace QLNhaKho
         {
             using (QLKhoDbContext db = new QLKhoDbContext())
             {
-                cbxStorage.DataSource = (db.Khoes.Select(x => x)).ToList();
+                cbxStorage.DataSource = db.Khoes.ToList();
                 cbxStorage.ValueMember = "makho";
                 cbxStorage.DisplayMember = "tenkho";
 
-                cmbSupplier.DataSource = (db.NhaCungCaps.Select(x => x)).ToList();
+                cmbSupplier.DataSource = db.NhaCungCaps.ToList();
                 cmbSupplier.ValueMember = "mancc";
                 cmbSupplier.DisplayMember = "tenncc";
 
-                var madd = db.Khoes.SingleOrDefault(x => x.makho == (int)cbxStorage.SelectedValue).madd;
-                txtPlace.Text = db.DiaDiems.SingleOrDefault(x => x.madd == madd).tendd;
+                cbxGoodsType.DataSource = db.LoaiHangHoas.ToList();
+                cbxGoodsType.DisplayMember = "tenloaihh";
+                cbxGoodsType.ValueMember = "maloaihh";
             }
             LoadData();
             cbxStorage.SelectedValueChanged += CmbStorage_SelectedValueChanged;
@@ -188,11 +194,10 @@ namespace QLNhaKho
             txtName.Enabled = false;
             rtbState.Enabled = false;
             cmbSupplier.Enabled = false;
-            dtpProductDate.Enabled = false;
-            dtpExpireDate.Enabled = false;
             nudAmount.Enabled = false;
             dtpEntryDate.Enabled = false;
             txtProducer.Enabled = false;
+            cbxGoodsType.Enabled = false;
 
             btnEdit.Enabled = false;
             btnSave.Enabled = false;
@@ -203,19 +208,12 @@ namespace QLNhaKho
             txtName.Enabled = true;
             rtbState.Enabled = true;
             cmbSupplier.Enabled = true;
-            dtpProductDate.Enabled = true;
-            dtpExpireDate.Enabled = true;
             nudAmount.Enabled = true;
             dtpEntryDate.Enabled = true;
             txtProducer.Enabled = true;
+            cbxGoodsType.Enabled = true;
 
             btnSave.Enabled = true;
-        }
-
-        private void FormView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormMain u = new FormMain();
-            u.Show();
         }
     }
 }

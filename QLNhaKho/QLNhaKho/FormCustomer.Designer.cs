@@ -35,12 +35,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxSelection = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.cbxDayOfBirth = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -60,8 +63,6 @@
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbxDayOfBirth = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -73,9 +74,9 @@
             this.groupBox1.Controls.Add(this.dgvList);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.groupBox1.Location = new System.Drawing.Point(0, 282);
+            this.groupBox1.Location = new System.Drawing.Point(0, 296);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(713, 193);
+            this.groupBox1.Size = new System.Drawing.Size(713, 220);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách";
@@ -111,11 +112,12 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvList.Size = new System.Drawing.Size(707, 174);
+            this.dgvList.Size = new System.Drawing.Size(707, 201);
             this.dgvList.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxSelection);
             this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Controls.Add(this.cbxDayOfBirth);
             this.groupBox2.Controls.Add(this.label9);
@@ -123,7 +125,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.btnRefresh);
             this.groupBox2.Controls.Add(this.btnSearch);
-            this.groupBox2.Controls.Add(this.txtSearch);
+            this.groupBox2.Controls.Add(this.txtSearchBox);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.btnAdd);
@@ -145,10 +147,58 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(713, 282);
+            this.groupBox2.Size = new System.Drawing.Size(713, 296);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
+            // 
+            // cbxSelection
+            // 
+            this.cbxSelection.FormattingEnabled = true;
+            this.cbxSelection.Items.AddRange(new object[] {
+            "All",
+            "CustomerID",
+            "CustomerName",
+            "Gender",
+            "DateOfBirth",
+            "Address",
+            "Phone"});
+            this.cbxSelection.Location = new System.Drawing.Point(272, 256);
+            this.cbxSelection.Name = "cbxSelection";
+            this.cbxSelection.Size = new System.Drawing.Size(121, 21);
+            this.cbxSelection.TabIndex = 55;
+            this.cbxSelection.Text = "All";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(602, 100);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 54;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // cbxDayOfBirth
+            // 
+            this.cbxDayOfBirth.FormattingEnabled = true;
+            this.cbxDayOfBirth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbxDayOfBirth.Location = new System.Drawing.Point(322, 104);
+            this.cbxDayOfBirth.Name = "cbxDayOfBirth";
+            this.cbxDayOfBirth.Size = new System.Drawing.Size(98, 21);
+            this.cbxDayOfBirth.TabIndex = 53;
+            this.cbxDayOfBirth.Text = "1";
             // 
             // label9
             // 
@@ -188,19 +238,19 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(638, 254);
+            this.btnSearch.Location = new System.Drawing.Point(614, 254);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(49, 23);
+            this.btnSearch.Size = new System.Drawing.Size(63, 23);
             this.btnSearch.TabIndex = 48;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // txtSearch
+            // txtSearchBox
             // 
-            this.txtSearch.Location = new System.Drawing.Point(397, 256);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(241, 20);
-            this.txtSearch.TabIndex = 47;
+            this.txtSearchBox.Location = new System.Drawing.Point(399, 256);
+            this.txtSearchBox.Name = "txtSearchBox";
+            this.txtSearchBox.Size = new System.Drawing.Size(209, 20);
+            this.txtSearchBox.TabIndex = 47;
             // 
             // btnDelete
             // 
@@ -380,46 +430,15 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // cbxDayOfBirth
-            // 
-            this.cbxDayOfBirth.FormattingEnabled = true;
-            this.cbxDayOfBirth.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cbxDayOfBirth.Location = new System.Drawing.Point(322, 104);
-            this.cbxDayOfBirth.Name = "cbxDayOfBirth";
-            this.cbxDayOfBirth.Size = new System.Drawing.Size(98, 21);
-            this.cbxDayOfBirth.TabIndex = 53;
-            this.cbxDayOfBirth.Text = "1";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(602, 100);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 54;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // Form6
+            // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 475);
+            this.ClientSize = new System.Drawing.Size(713, 516);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "Form6";
+            this.Name = "FormCustomer";
             this.Text = "Khách hàng";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
@@ -435,7 +454,7 @@
         private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
@@ -461,5 +480,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxDayOfBirth;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cbxSelection;
     }
 }

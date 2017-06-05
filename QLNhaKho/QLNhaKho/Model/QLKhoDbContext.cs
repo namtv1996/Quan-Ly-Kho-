@@ -18,6 +18,7 @@ namespace QLNhaKho.Model
         public virtual DbSet<HangHoa> HangHoas { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<Kho> Khoes { get; set; }
+        public virtual DbSet<LoaiHangHoa> LoaiHangHoas { get; set; }
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public virtual DbSet<Nhansu> Nhansus { get; set; }
         public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }

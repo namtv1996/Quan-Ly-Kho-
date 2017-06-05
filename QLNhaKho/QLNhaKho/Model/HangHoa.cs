@@ -26,12 +26,10 @@ namespace QLNhaKho.Model
         [StringLength(50)]
         public string tinhtrang { get; set; }
 
-        public DateTime? ngaysx { get; set; }
-
-        public DateTime? hansd { get; set; }
-
         [StringLength(50)]
         public string nhasx { get; set; }
+
+        public int? maloaihh { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHangHoa> ChiTietHangHoas { get; set; }
@@ -41,5 +39,7 @@ namespace QLNhaKho.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuXuat> PhieuXuats { get; set; }
+
+        public virtual LoaiHangHoa LoaiHangHoa { get; set; }
     }
 }

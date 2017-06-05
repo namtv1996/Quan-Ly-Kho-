@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLNhaKho.Model
 {
-    class CommodityView
+    class XemHangHoa
     {
         public int mahh { set; get; }
 
@@ -14,9 +14,7 @@ namespace QLNhaKho.Model
 
         public string tinhtrang { set; get; }
 
-        public DateTime? ngaysx { set; get; }
-
-        public DateTime? hansd { set; get; }
+        public int maloaihh { set; get; }
 
         public string nhasx { set; get; }
 
@@ -25,5 +23,7 @@ namespace QLNhaKho.Model
         public DateTime? ngaynhap { set; get; }
 
         public int mancc { set; get; }
+
+        public int makho { set; get; }
     }
 }
